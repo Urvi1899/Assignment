@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>My Chrome Extension</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Chrome Extension</h1>
+      <select id="names-dropdown">
+        {% for name in names %}
+          <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+      </select>
+      <p id="age-text"></p>
+      <p id="error-text"></p>
+    </div>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='popup.js') }}"></script>
+  </body>
+</html>
